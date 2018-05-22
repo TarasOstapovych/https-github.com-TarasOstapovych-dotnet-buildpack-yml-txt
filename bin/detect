@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
-file="../base_path.yml"
+file="../base_path.yml.txt"
 name=$(cat "$file")
 
 if [ -n "$(find $name $1 -maxdepth 5 -iname Startup.cs)" ]; then
