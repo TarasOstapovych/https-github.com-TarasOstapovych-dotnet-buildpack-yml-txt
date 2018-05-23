@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+file="../base_path.yml.txt"
+name=$(cat "$file")
 
 function install_dotnet() {
   local BUILD_DIR="$name"
