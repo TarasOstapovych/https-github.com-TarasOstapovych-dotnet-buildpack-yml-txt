@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
-file=".base_path.yml.txt"
+file="base_path.yml.txt"
 name=$(cat "$file")
-files=".ignore_path.yml.txt"
+files="ignore_path.yml.txt"
 ignore=$(cat "files")
 
 if [ -n "$(find $name $1 -iname Startup.cs -not -path "$ignore")" ]; then
