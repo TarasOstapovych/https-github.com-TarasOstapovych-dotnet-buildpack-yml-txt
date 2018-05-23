@@ -6,7 +6,7 @@ files="ignore_path.yml.txt"
 ignore=$(cat "files")
 #names=/Bs.WebApp.Admin/
 
-if [ -n "$(find $1/$name -name Startup.cs)" ]; then
+if [ -n "$(find ($1)/($name) -name Startup.cs)" ]; then
   echo "ASP.NET Core" && exit 0
 else
   echo "no" && exit 1
