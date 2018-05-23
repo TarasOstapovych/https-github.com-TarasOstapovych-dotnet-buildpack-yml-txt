@@ -11,11 +11,11 @@ if [ "$STACK" != "heroku-16" ]; then
 	echo "Need heroku-16 stack"
 	exit 1
 fi
-
-name=$(cat "../bath_path.yml.txt")
+file="../base_path.yml.txt"
+name=$(cat "$file")
 
 ### Configure directories
-BUILD_DIR=${name:-}
+BUILD_DIR=${1:-}
 CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
@@ -43,7 +43,7 @@ cd $BUILD_DIR
 dotnet --info
 
 if [ -z ${PROJECT_FILE:-} ]; then
-	PROJECT_FILE=$(x=$(dirname $(find ${BUILD_DIR} -maxdepth 5 -iname Startup.cs | head -1)); while [[ "$x" =~ $BUILD_DIR ]] ; do find "$x" -maxdepth 1 -name *.csproj; x=`dirname "$x"`; done)
+	PROJECT_FILE=$(x=$(dirname $(find $name ${BUILD_DIR} -maxdepth 5 -iname Startup.cs | head -1)); while [[ "$x" =~ $BUILD_DIR ]] ; do find "$x" -maxdepth 1 -name *.csproj; x=`dirname "$x"`; done)
 fi
 
 if [ -z ${PROJECT_NAME:-} ]; then
