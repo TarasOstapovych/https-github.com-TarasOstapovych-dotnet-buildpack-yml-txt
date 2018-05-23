@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
-file="../base_path.yml.txt"
-name=$(cat "$file")
+
 
 function install_dotnet() {
-  local BUILD_DIR="$name"
+  local BUILD_DIR="$1"
   local CACHE_DIR="$2"
   local ZIP_NAME="dotnet-2.1.4.tar.gz"
 
