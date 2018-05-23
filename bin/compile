@@ -11,7 +11,7 @@ if [ "$STACK" != "heroku-16" ]; then
 	echo "Need heroku-16 stack"
 	exit 1
 fi
-file="base_path.yml.txt"
+file=".base_path.yml.txt"
 name=$(cat "$file")
 
 ### Configure directories
