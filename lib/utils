@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function install_dotnet() {
-  local BUILD_DIR="$1"
+  local BUILD_DIR="$name"
   local CACHE_DIR="$2"
   local ZIP_NAME="dotnet-2.1.4.tar.gz"
 
