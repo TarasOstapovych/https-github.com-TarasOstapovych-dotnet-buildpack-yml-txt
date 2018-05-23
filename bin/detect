@@ -5,7 +5,7 @@ name=$(cat "$file")
 files="../ignore_path.yml.txt"
 ignore=$(cat "files")
 
-if [ -n "$(find $name $1 -iname Startup.cs) -not -path $ignore" ]; then
+if [ -n "$(find $name $1 -iname Startup.cs -not -path "$ignore")" ]; then
   echo "ASP.NET Core" && exit 0
 else
   echo "no" && exit 1
