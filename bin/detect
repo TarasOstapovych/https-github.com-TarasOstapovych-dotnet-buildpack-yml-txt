@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
-file="base_path.yml.txt"
-name=$(cat "$file")
+#file="base_path.yml.txt"
+#name=$(cat "$file")
 #files="ignore_path.yml.txt"
 #ignore=$(cat "files")
 #names=/Bs.WebApp.Admin/
