@@ -6,7 +6,7 @@ name=$(cat "$file")
 #ignore=$(cat "files")
 #names=/Bs.WebApp.Admin/
 
-if [ -n "$(find $1 -maxdepth 5 -iname $name)" ]; then
+if [ -n "$(find $1 -maxdepth 5 -iname Bs.WebApp.Admin.csproj.user)" ]; then
   echo "ASP.NET Core" && exit 0
 else
   echo "no" && exit 1
