@@ -2,8 +2,10 @@
 # bin/detect <build-dir>
 file="../base_path.yml.txt"
 name=$(cat "$file")
+files="../ignore_path.yml.txt"
+ignore=$(cat "files")
 
-if [ -n "$(find $name $1 -maxdepth 5 -iname Startup.cs)" ]; then
+if [ -n "$(find $name $1 -maxdepth 5 $ignore -prune -o -iname Startup.cs)" ]; then
   echo "ASP.NET Core" && exit 0
 else
   echo "no" && exit 1
