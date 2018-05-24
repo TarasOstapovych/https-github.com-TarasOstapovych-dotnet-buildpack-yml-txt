@@ -1,12 +1,8 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
-#file="base_path.yml.txt"
-#name=$(cat "$file")
-#files="ignore_path.yml.txt"
-#ignore=$(cat "files")
-#names=/Bs.WebApp.Admin/
+name=$(cat base_path.yml.txt)
 
-if [ -n "$(find $1 -maxdepth 5 -name Bs.WebApp.Admin)" ]; then
+if [ -n "$(find $1 -maxdepth 5 -name $name)" ]; then
   echo "ASP.NET Core" && exit 0
 else
   echo "no" && exit 1
