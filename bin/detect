@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
-name=$(cat base_path.yml.txt)
+#name=$(cat base_path.yml.txt)
 
-if [ -n "$(find $1 -maxdepth 5 -iname $name)" ]; then
+if [ -n "$(find $1 -maxdepth 5 -iname Startup.cs)" ]; then
   echo "ASP.NET Core" && exit 0
 else
   echo "no" && exit 1
